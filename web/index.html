@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title>CSC 330 Homework 2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body>
+    <div>
+      <h1>Future Value Calculator</h1>
+      
+      <form action="calculate" method="post">
+        <label>Investment Amount</label>
+        <input type="text" name="amount" size="50" required>
+        <br>
+        <label>Yearly Interest Rate</label>
+        <input type="text" name="rate" size="50" required>
+        <br>
+        <label>Number of Years</label>
+        <input type="number" name="years"  placeholder="Integer number of years"
+               required>
+        <br>
+        <label class="noshow">Submit</label>
+        <input type="submit" value="Calculate">
+      </form>
+    </div>
+    <footer>
+      &copy; 2015 Andrew Bryant & Patrick Lathan
+    </footer>
+  </body>
+</html>
