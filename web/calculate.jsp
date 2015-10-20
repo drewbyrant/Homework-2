@@ -9,9 +9,19 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>JSP Page</title>
+    <title>CSC 330 Homework 2</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <label>Investment Amount</label>
+    <span>${calc.amount}</span>
+    <br>
+    <label>Yearly Interest Rate</label>
+    <span>${calc.rate}</span>
+    <br>
+    <label>Number of Years</label>
+    <span>${calc.years}</span>
+    <br>
+    <label>Future Value</label>
+    <span>${calc.futureAmount}</span>
   </body>
 </html>

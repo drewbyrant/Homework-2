@@ -74,10 +74,11 @@ public class CalculateServlet extends HttpServlet {
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
     String message = "";
-    processRequest(request, response);
     String url = "/index.html";
     
     String action = request.getParameter("action");
+    System.out.println(action);
+    //String action = "calculate";
     
     if(action == null){
       action = "enter";
@@ -135,8 +136,15 @@ public class CalculateServlet extends HttpServlet {
       
       request.setAttribute("futureAmount", futureAmount);
       request.setAttribute("message", message);
+      request.setAttribute("calc", calc);
       
-      url = "/calculate";
+      System.out.println(futureAmount);
+      
+      url = "/calculate.jsp";
+      
+      getServletContext()
+                .getRequestDispatcher(url)
+                .forward(request, response);
     }
   }
 

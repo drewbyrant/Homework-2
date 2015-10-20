@@ -12,17 +12,20 @@ package business;
 public class Calculator {
   private double amount;
   private double rate;
+  private double futureAmount;
   private int years;
   
   public Calculator(){
     amount = 0;
     rate = 0;
     years = 0;
+    futureAmount = 0;
   }
   public Calculator(double amount, double rate, int years){
     this.amount = amount;
     this.rate = rate;
     this.years = years;
+    futureAmount = 0;
   }
   public void setAmount(double amount){
     if(amount >= 0){
@@ -54,17 +57,23 @@ public class Calculator {
   public int getYears(){
     return this.years;
   }
+  public void setFutureAmount(double future){
+    futureAmount = future;
+  }
+  public double getFutureAmount(){
+    return futureAmount;
+  }
   
   public double calculate(){
     int intAmount;
     double newRate = rate/100;
-    double newAmount = amount;
+    futureAmount = amount;
     for(int i = 1; i <= years; i++){
-      newAmount += newAmount * newRate;
+      futureAmount += futureAmount * newRate;
     }
-    newAmount = newAmount * 100;
-    intAmount = (int)newAmount;
-    newAmount = (double)intAmount / 100;
-    return newAmount;
+    futureAmount = futureAmount * 100;
+    intAmount = (int)futureAmount;
+    futureAmount = (double)intAmount / 100;
+    return futureAmount;
   }
 }
