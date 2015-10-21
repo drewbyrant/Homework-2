@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Andrew Bryant & Patrick Lathan
+Copyright 2015 Drew Bryant and Patrick Lathan
  */
 package servlets;
 
