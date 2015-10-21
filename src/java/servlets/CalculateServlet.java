@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Copyright 2015 Andrew Bryant & Patrick Lathan
  */
 package servlets;
 
@@ -20,7 +18,6 @@ import business.Calculator;
  */
 @WebServlet(name = "CalculateServlet", urlPatterns = {"/calculate"})
 public class CalculateServlet extends HttpServlet {
-
   /**
    * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
    * methods.
@@ -77,8 +74,6 @@ public class CalculateServlet extends HttpServlet {
     String url = "/index.html";
     
     String action = request.getParameter("action");
-    System.out.println(action);
-    //String action = "calculate";
     
     if(action == null){
       action = "enter";
@@ -105,22 +100,10 @@ public class CalculateServlet extends HttpServlet {
         if(amount < 0){
           amount = 0;
         }
-      } catch (NumberFormatException nfe){
-        message = "Please put a positive number in all 3 fields";
-        url = "/index.html";
-        return;
-      }
-      try{
         rate = Double.parseDouble(rateString);
         if(rate < 0){
           rate = 0;
         }
-      } catch (NumberFormatException nfe){
-        message = "Please put a positive number in all 3 fields";
-        url = "/index.html";
-        return;
-      }
-      try{
         years = Integer.parseInt(yearsString);
         if(years < 0){
           years = 0;
@@ -141,11 +124,10 @@ public class CalculateServlet extends HttpServlet {
       System.out.println(futureAmount);
       
       url = "/calculate.jsp";
-      
-      getServletContext()
+    }
+    getServletContext()
                 .getRequestDispatcher(url)
                 .forward(request, response);
-    }
   }
 
   /**
@@ -157,5 +139,4 @@ public class CalculateServlet extends HttpServlet {
   public String getServletInfo() {
     return "Short description";
   }// </editor-fold>
-
 }
